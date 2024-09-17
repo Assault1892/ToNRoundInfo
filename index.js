@@ -28,10 +28,6 @@ function showData(roundType, terror1, terror2, terror3, optedin, saboteur) {
 
 // ToNSaveManagerからラウンド情報などを受け取る
 // https://github.com/ChrisFeline/ToNSaveManager?tab=readme-ov-file#osc-documentation
-server.on("/avatar/parameters/ToN_RoundType", (osc_roundType) => {
-    roundType = osc_roundType;
-})
-
 server.on("/avatar/parameters/ToN_Terror1", (osc_terror1) => {
     terror1 = osc_terror1;
 })
@@ -52,4 +48,7 @@ server.on("/avatar/parameters/ToN_Saboteur", (osc_saboteur) => {
     saboteur = osc_saboteur;
 })
 
-showData(roundType, terror1, terror2, terror3, optedin, saboteur)
+server.on("/avatar/parameters/ToN_RoundType", (osc_roundType) => {
+    roundType = osc_roundType;
+    showData(roundType, terror1, terror2, terror3, optedin, saboteur);
+})
