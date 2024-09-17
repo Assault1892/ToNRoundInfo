@@ -54,6 +54,8 @@ const latest_logfile = filter_logfile.reduce((a, b) => {
 })["filename"] // この書き方ええんか？
 console.log(latest_logfile)
 
+// 3秒おきに監視
+
 // ToNSaveManagerからラウンド情報などを受け取る
 // https://github.com/ChrisFeline/ToNSaveManager?tab=readme-ov-file#osc-documentation
 
