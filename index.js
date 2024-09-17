@@ -12,10 +12,9 @@ var terror3   = 0; // 3体目のテラー
 var optedin   = false; // ゲームに参加しているかどうか
 var saboteur  = false; // サボタージュラウンドにて憑依状態かどうか
 
-// ToNSaveManagerからラウンド情報などを受け取る
-// https://github.com/ChrisFeline/ToNSaveManager?tab=readme-ov-file#osc-documentation
-server.on("/avatar/parameters/ToN_RoundType", (osc_roundType) => {
-    roundType = osc_roundType;
+// コンソール表示関数
+
+function showData(roundType, terror1, terror2, terror3, optedin, saboteur) {
     console.log(`
         received!
         現在のラウンド: ${roundType}
@@ -25,4 +24,32 @@ server.on("/avatar/parameters/ToN_RoundType", (osc_roundType) => {
         参加状態: ${optedin}
         憑依状態: ${saboteur}
     `)
+}
+
+// ToNSaveManagerからラウンド情報などを受け取る
+// https://github.com/ChrisFeline/ToNSaveManager?tab=readme-ov-file#osc-documentation
+server.on("/avatar/parameters/ToN_RoundType", (osc_roundType) => {
+    roundType = osc_roundType;
 })
+
+server.on("/avatar/parameters/ToN_Terror1", (osc_terror1) => {
+    terror1 = osc_terror1;
+})
+
+server.on("/avatar/parameters/ToN_Terror2", (osc_terror2) => {
+    terror2 = osc_terror2;
+})
+
+server.on("/avatar/parameters/ToN_Terror3", (osc_terror3) => {
+    terror3 = osc_terror3;
+})
+
+server.on("/avatar/parameters/ToN_OptedIn", (osc_optedin) => {
+    optedin = osc_optedin;
+})
+
+server.on("/avatar/parameters/ToN_Saboteur", (osc_saboteur) => {
+    saboteur = osc_saboteur;
+})
+
+showData(roundType, terror1, terror2, terror3, optedin, saboteur)
