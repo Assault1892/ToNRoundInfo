@@ -1,6 +1,6 @@
 {
     "roundType": {
-        "0": "不明",
+        "0": "ロビー、または不明 (Lobby or Unknown)",
         "1": "クラシック (Classic)",
         "2": "霧 (Fog)",
         "3": "パニッシュ (Punished)",
@@ -16,11 +16,5 @@
         "13": "走れ！ (RUN)",
         "14": "8ページ (8 Pages)",
         "15": "寒い夜 (Cold Night)"
-    },
-    "terror": {
-
-    },
-    "terror_alt": {
-        
     }
 }

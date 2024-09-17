@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chokidar": "^4.0.0",
     "node-osc": "^9.1.3"
   }
 }
