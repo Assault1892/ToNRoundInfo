@@ -1,2 +1,2 @@
-# ToNRoundInfo
-ToNSaveManagerのOSCを使用した、現在のラウンド情報を表示するNode.jsのテストプログラム
+using node v20.12.1  
+npm i && node .
