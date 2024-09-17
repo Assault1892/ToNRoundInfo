@@ -1,0 +1,26 @@
+{
+    "roundType": {
+        "0": "不明",
+        "1": "クラシック (Classic)",
+        "2": "霧 (Fog)",
+        "3": "パニッシュ (Punished)",
+        "4": "サボタージュ (Sabotage)",
+        "5": "狂気 (Cracked)",
+        "6": "ブラッドバス (Bloodbath)",
+        "7": "ミッドナイト (Midnight)",
+        "8": "オルタネイト (Alternate)",
+        "9": "ミスティックムーン (Mystic Moon)",
+        "10": "ブラッドムーン (Blood Moon)",
+        "11": "トワイライト (Twilight)",
+        "12": "ソルスティス (Solstice)",
+        "13": "走れ！ (RUN)",
+        "14": "8ページ (8 Pages)",
+        "15": "寒い夜 (Cold Night)"
+    },
+    "terror": {
+
+    },
+    "terror_alt": {
+        
+    }
+}
