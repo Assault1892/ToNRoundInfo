@@ -1,5 +1,7 @@
 const osc = require("node-osc"); // node-oscをrequire
-console.log("starting...");
+console.log("loaded: node-osc");
+const models = require("./models.json"); // テラー情報などをrequire
+console.log("loaded: models")
 const server = new osc.Server(9000, "127.0.0.1"); // OSCサーバーを初期化
 console.log("server is up, listening on port 9000");
 
@@ -49,6 +51,7 @@ server.on("/avatar/parameters/ToN_Saboteur", (osc_saboteur) => {
 })
 
 server.on("/avatar/parameters/ToN_RoundType", (osc_roundType) => {
-    roundType = osc_roundType;
+    osc_roundType = osc_roundType.toString();
+    roundType = models["roundType"][osc_roundType.substring(osc_roundType.indexOf(",") + 1)];
     showData(roundType, terror1, terror2, terror3, optedin, saboteur);
 })
