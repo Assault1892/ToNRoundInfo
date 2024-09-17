@@ -1,0 +1,11 @@
+{
+  "name": "tonroundinfo",
+  "version": "1.0.0",
+  "description": "ToNSaveManagerのOSCを使用した、現在のラウンド情報を表示するNode.jsのテストプログラム",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
