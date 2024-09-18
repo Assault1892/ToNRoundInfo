@@ -52,19 +52,28 @@ const filter_logfile = logdir_list.filter(logs => logs.filename.startsWith("outp
 const latest_logfile = filter_logfile.reduce((a, b) => {
     return new Date(a.mtime > b.mtime) ? b : a;
 })["filename"] // この書き方ええんか？
-console.log(latest_logfile)
+console.log(`found latest logfile: ${latest_logfile}`)
 
-// 3秒おきに監視
+const log_filepath = path.join(log_dir, latest_logfile);
+console.log(`watching logfile path: ${log_filepath}`)
+
+// chokidarを初期化
+
+const watcher = chokidar.watch(log_filepath);
+console.log("logwatcher initialized")
+
 
 // ToNSaveManagerからラウンド情報などを受け取る
 // https://github.com/ChrisFeline/ToNSaveManager?tab=readme-ov-file#osc-documentation
 
 server.on("/avatar/parameters/ToN_OptedIn", (osc_optedin) => {
-    optedin = osc_optedin;
+    osc_optedin = osc_optedin.toString()
+    optedin = osc_optedin.substring(osc_optedin.indexOf(",")+1);
 })
 
 server.on("/avatar/parameters/ToN_Saboteur", (osc_saboteur) => {
-    saboteur = osc_saboteur;
+    osc_saboteur = osc_saboteur.toString();
+    saboteur = osc_saboteur.substring(osc_saboteur.indexOf(",")+1);
 })
 
 server.on("/avatar/parameters/ToN_RoundType", (osc_roundType) => {
