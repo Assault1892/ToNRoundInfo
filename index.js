@@ -30,8 +30,7 @@ function showData(roundType, terror, optedin, saboteur) {
     `)
 }
 
-// ログファイルを監視
-// テラー名を取得する
+// テラー名を取得するためにログファイルを監視する
 
 // ログファイルまでのパスを取得
 home_dir = process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"];
@@ -58,10 +57,16 @@ const log_filepath = path.join(log_dir, latest_logfile);
 console.log(`watching logfile path: ${log_filepath}`)
 
 // chokidarを初期化
-
 const watcher = chokidar.watch(log_filepath);
-console.log("logwatcher initialized")
 
+// ログファイルを監視する
+watcher.on("ready", () => {
+    console.log("logwatcher initialized")
+    watcher.on("all", (event, path) => {
+        console.log(`logfile updated: ${event} / ${path}`);
+        
+    })
+})
 
 // ToNSaveManagerからラウンド情報などを受け取る
 // https://github.com/ChrisFeline/ToNSaveManager?tab=readme-ov-file#osc-documentation
