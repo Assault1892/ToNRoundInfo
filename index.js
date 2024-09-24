@@ -62,9 +62,9 @@ const watcher = chokidar.watch(log_filepath);
 // ログファイルを監視する
 watcher.on("ready", () => {
     console.log("logwatcher initialized")
-    watcher.on("change", (event, path) => {
-        console.log(`logfile updated: ${event} / ${path}`);
-    })
+    // watcher.on("change", (event, path) => {
+    //     console.log(`logfile updated: ${event} / ${path}`);
+    // })
 })
 
 // ToNSaveManagerからラウンド情報などを受け取る
